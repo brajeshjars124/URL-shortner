@@ -14,7 +14,7 @@ const userRoute = require('./routes/user');
 const app = express();
 const PORT = 8001;
 
-connectToMongoDB('mongodb://localhost:27017/short-url')
+connectToMongoDB(process.env.MONGODB ?? 'mongodb://localhost:27017/short-url')
   .then(()=> console.log("MongoDB Connected!"))
   .catch((err)=> console.log("Database Connection Error", err));
 
