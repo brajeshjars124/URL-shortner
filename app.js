@@ -16,7 +16,7 @@ const userRoute = require('./routes/user');
 const app = express();
 const PORT = process.env.PORT;
 
-connectToMongoDB(process.env.MONGO_URL)
+connectToMongoDB(process.env.MONGO_URL|| "mongodb+srv://brajeshjarsoniya14122:Qln6FLHYffAQxGNX@cluster0.yf0ijhc.mongodb.net/?appName=Cluster0")
   .then(()=> console.log("MongoDB Connected!"))
   .catch((err)=> console.log("Database Connection Error", err));
 
